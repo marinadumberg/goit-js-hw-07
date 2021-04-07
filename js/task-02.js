@@ -6,12 +6,21 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
-const IngredientsLiEl = document.querySelector('ingredients-list');
-const elements = [];
+const ingredientsLiEl = document.querySelector('#ingredients');
 for (let i = 0; i < ingredients.length; i += 1){
-  
   const liEl = document.createElement('li');
-  liEl.textContent = [ingredients];
-  elements.push(liEl);
+  liEl.textContent = ingredients[i];
+  ingredientsLiEl.appendChild(liEl);
+  console.log(liEl);
 }
-console.log(elements);
+
+
+
+/*ingredients.forEach(ing => {
+    const liEl = document.createElement('li');
+    ingredientsLiEl.textContent = ingredients;
+    ingredientsLiEl.appendChild(liEl); 
+    console.log(liEl)
+});*/
+
+
