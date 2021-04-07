@@ -15,3 +15,20 @@ const images = [
     alt: 'Group of Horses Running',
   },
 ];
+
+
+const gallery = document.getElementById('gallery');
+gallery.style.display = 'flex';
+gallery.style.alignItems = 'center';
+gallery.style.justifyContent = 'space-between';
+
+
+const creatListItem = images.map(image => {
+  const itemEl = document.createElement('li');
+  itemEl.style.listStyle = "none";
+  itemEl.insertAdjacentHTML('afterbegin', `<img src='${image.url}' alt='${image.alt}' width='400px'>`);
+  return itemEl;
+});
+
+gallery.append(...creatListItem);
+console.log(gallery);
