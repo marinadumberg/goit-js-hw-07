@@ -1,13 +1,13 @@
-const inputForm = document.getElementById('validation-input');
-const lengthForm = inputForm.getAttributeNumber();
-console.log(lengthForm)
-inputForm.addEventListener('blur', () => {
-    if (inputForm.nodeValue.length === lengthForm) {
-        inputForm.classList.add('valid');
-        inputForm.classList.remove('invalid');
-    }
-    else {
-        inputForm.classList.add('invalid');
-    }
+
+const checkInput = document.querySelector("#validation-input");
+console.log(checkInput);
+checkInput.addEventListener("blur", onInput);
+function onInput(event) {
+  checkInput.classList.add("valid", "invalid");
+  console.log(event.currentTarget.value.length);
+  if (event.currentTarget.value.length == checkInput.dataset.length) {
+    checkInput.classList.toggle("invalid");
+    };
 }
-);
+
+console.log(checkInput.dataset.length);
