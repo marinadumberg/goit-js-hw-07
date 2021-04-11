@@ -6,21 +6,15 @@ const ingredients = [
   'Зелень',
   'Приправы',
 ];
-const ingredientsLiEl = document.querySelector('#ingredients');
-for (let i = 0; i < ingredients.length; i += 1){
-  const liEl = document.createElement('li');
-  liEl.textContent = ingredients[i];
-  ingredientsLiEl.appendChild(liEl);
-  console.log(liEl);
-}
 
-
-
-// ingredients.forEach(ing => {
-//     const liEl = document.createElement('li');
-//     liEl.textContent = ing;
-//     ingredientsLiEl.appendChild(liEl); 
-//     console.log(liEl)
-// });
-
-
+const ingLIst = document.querySelector(`#ingredients`);
+const makeIngrItem = (ingredients) => {
+  return ingredients.map((ingredient) => {
+    const itemEl = document.createElement("li");
+    itemEl.textContent = ingredient;
+    return itemEl;
+  });
+};
+const elements = makeIngrItem(ingredients);
+ingLIst.append(...elements);
+console.log(ingLIst);
